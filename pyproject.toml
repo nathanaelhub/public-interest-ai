@@ -1,0 +1,14 @@
+[project]
+name = "public-interest-ai"
+version = "0.1.0"
+description = "One page connecting three public-interest projects built with Claude, with every figure traced to its source."
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Nathanael Johnson", email = "nathanaeljdj@gmail.com" }]
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+markers = ["live: fetches the project READMEs from GitHub"]
