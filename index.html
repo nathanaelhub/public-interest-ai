@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public-Interest Projects with Claude</title>
+<meta name="description" content="Three public-interest projects built with Claude: a Tennessee benefits screener, Nashville council digests, and a workshop kit for nonprofit staff. Every figure traced to its source.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --ink: #1f2328; --muted: #5b6168; --line: #dcd8cf;
+  --accent: #1d5c63; --accent-soft: #e3efef; --measure: 50rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15181b; --surface: #1d2126; --ink: #e8e6e1; --muted: #a3a9b0; --line: #343a41;
+    --accent: #7cc4c9; --accent-soft: #1f3337;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15181b; --surface: #1d2126; --ink: #e8e6e1; --muted: #a3a9b0; --line: #343a41;
+  --accent: #7cc4c9; --accent-soft: #1f3337;
+}
+* { box-sizing: border-box; }
+html { font-size: 112.5%; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 1rem/1.6 "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--accent); }
+main { max-width: var(--measure); margin: 0 auto; padding: 2.5rem 16px 3rem; }
+h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 0.75rem; }
+h2 { font-size: 1.35rem; margin: 2.75rem 0 0.75rem; }
+h3 { font-size: 1.2rem; margin: 0; }
+.byline { color: var(--muted); margin: 0 0 1.5rem; }
+.thesis { font-size: 1.15rem; margin: 0 0 1rem; }
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 0.75rem;
+  padding: 0; margin: 1.25rem 0 0; list-style: none; }
+.principles li { background: var(--accent-soft); border-radius: 8px; padding: 0.75rem 0.9rem; font-size: 0.95rem; }
+.principles strong { display: block; }
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem 1.25rem 1rem; margin: 1rem 0; }
+.project .for { color: var(--muted); margin: 0.15rem 0 0.75rem; font-size: 0.95rem; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+.stat { border-top: 1px solid var(--line); padding-top: 0.5rem; }
+.stat b { display: block; font-size: 1.3rem; line-height: 1.25; }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+.project dl { margin: 0.75rem 0 0; }
+.project dt { font-weight: 700; margin-top: 0.6rem; }
+.project dd { margin: 0.1rem 0 0; }
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 1rem; font-size: 0.95rem; }
+ul.findings { padding-left: 1.2rem; }
+ul.findings li { margin: 0.5rem 0; }
+footer { max-width: var(--measure); margin: 0 auto; padding: 1rem 16px 2.5rem; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); }
+@media print {
+  /* Paper is always light, whatever the screen theme. */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"] {
+    --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; --line: #bbb; --accent: #000; --accent-soft: #f1f1f1;
+  }
+  html { font-size: 10.5pt; }
+  main { padding: 0; }
+  .project { break-inside: avoid; }
+  a { color: #000; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Public-interest projects built with Claude</h1>
+<p class="byline">Nathanael Johnson · <a href="https://github.com/nathanaelhub">github.com/nathanaelhub</a> · October–November 2026</p>
+
+<p class="thesis">Three tools for people who deal with public systems: families checking what help they
+might get, residents following their city council, and nonprofit staff starting to use AI.
+They're built on one idea: <strong>Claude handles the language, and code checks the facts.</strong></p>
+
+<ul class="principles">
+  <li><strong>Every number has a source.</strong> Figures are quoted from official pages, and tests fail if the source stops saying it.</li>
+  <li><strong>Code checks Claude.</strong> Claude writes and explains; plain code does the math and checks the facts.</li>
+  <li><strong>Measured, not assumed.</strong> Each project has an evaluation against known answers.</li>
+  <li><strong>Says what it doesn't know.</strong> Unsettled rules, untested claims and limits are on the page.</li>
+</ul>
+
+<h2>The projects</h2>
+
+<article class="project" id="screener">
+  <h3>Tennessee benefits screener</h3>
+  <p class="for">For families asking "might we qualify for SNAP, WIC or TennCare?"</p>
+  <p>Someone describes their household in plain words, in English or Spanish. Claude asks the
+  questions it needs and explains the result. The eligibility math is plain code that Claude calls
+  through MCP, with every threshold quoted from an official source.</p>
+  <div class="stats">
+    <div class="stat"><b>98% vs 81%</b><span>program calls right: 155/158 with the screener vs 110/135 with web search, 40 simulated households</span></div>
+    <div class="stat"><b>19/22 vs 3/22</b><span>SNAP amounts estimated within $5</span></div>
+    <div class="stat"><b>$0.19 vs $0.49</b><span>model cost per conversation</span></div>
+  </div>
+  <dl>
+    <dt>What building it found</dt>
+    <dd>Tennessee's SNAP income limit is unsettled. News reports say the state moved to 200% of
+    poverty; the USDA's chart of states with that rule doesn't list Tennessee. The screener reports
+    both, and a test fails the day the USDA adds Tennessee.</dd>
+    <dt>Limits</dt>
+    <dd>A screener, not a decision: results are "likely", "possibly" or "unlikely", and it always
+    says to apply anyway. The evaluation uses simulated people, not real families.</dd>
+  </dl>
+  <div class="links"><a href="https://nathanaelhub.github.io/tn-benefits-screener/">Try it</a><a href="https://github.com/nathanaelhub/tn-benefits-screener">Code and evaluation</a></div>
+</article>
+
+<article class="project" id="digest">
+  <h3>Nashville Council Digest</h3>
+  <p class="for">For residents asking "what did the Metro Council do, and what's in my district?"</p>
+  <p>Every bill and resolution in plain language, with its outcome and council district. Claude
+  writes each summary; code checks every amount, number and name against the official text; a second
+  Claude reading checks the meaning. If either check fails, the site shows the official title instead.</p>
+  <div class="stats">
+    <div class="stat"><b>1,125</b><span>bills and resolutions from 21 meetings, January–October 2026</span></div>
+    <div class="stat"><b>6 real errors</b><span>caught by the second reading: it flagged 14 of 1,124 summaries the fact check had passed</span></div>
+    <div class="stat"><b>0 vs 56 of 59</b><span>planted name swaps caught by the code check vs the Claude reading</span></div>
+  </div>
+  <dl>
+    <dt>What building it found</dt>
+    <dd>The official record has its own errors: four, including an analysis naming the wrong
+    nonprofit for a grant. And the city's "passed" flag reads "Fail" for a resolution the council
+    adopted, so outcomes come from the recorded action instead.</dd>
+    <dt>Limits</dt>
+    <dd>The review of flagged summaries was done by Claude in the building session, not by an
+    independent person; every case is in the repo to check. Districts are found for 180 of 194
+    site-specific zoning bills.</dd>
+  </dl>
+  <div class="links"><a href="https://nathanaelhub.github.io/nashville-council-digest/">Read the digests</a><a href="https://github.com/nathanaelhub/nashville-council-digest">Code and evaluation</a></div>
+</article>
+
+<article class="project" id="workshop">
+  <h3>Using Claude at a Nonprofit: a one-hour workshop</h3>
+  <p class="for">For nonprofit staff who don't write code, and the person who trains them.</p>
+  <p>A ready-to-run kit that teaches four habits: ask well, check before using, protect clients,
+  and know when not to use it. It has a facilitator guide, slides, four exercises with answer keys, a
+  privacy sheet quoting Anthropic's policies, and a quiz to give before and after.</p>
+  <div class="stats">
+    <div class="stat"><b>Grade 2.6–5.8</b><span>reading level of every attendee page, measured in code</span></div>
+    <div class="stat"><b>$0.10</b><span>to re-run every exercise through Claude before a workshop and score the answers</span></div>
+  </div>
+  <dl>
+    <dt>What building it found</dt>
+    <dd>I expected Claude to invent numbers when asked vaguely for a grant paragraph. It didn't: it
+    left blanks like "[X] households" and asked for the real figures. The lesson moved to the person
+    filling in the blanks, and the answer keys say so.</dd>
+    <dt>Limits</dt>
+    <dd>Not yet run with real staff. A one-page <a href="https://nathanaelhub.github.io/nonprofit-ai-workshop/host.html">host flyer</a>
+    is out to find a first group.</dd>
+  </dl>
+  <div class="links"><a href="https://nathanaelhub.github.io/nonprofit-ai-workshop/">See the kit</a><a href="https://github.com/nathanaelhub/nonprofit-ai-workshop">Code and RUNBOOK</a></div>
+</article>
+
+<h2>Checking the checker</h2>
+<p>An AI grader is only useful if you know how often it's wrong. Before relying on one, I measured it:</p>
+<ul class="findings">
+  <li><a href="https://github.com/nathanaelhub/judge-audit">judge-audit</a> grades answers whose
+  right verdict is known in advance. When a Claude judge was wrong on all five votes, the item was
+  wrong, not the judge: errors locked to an item meant three votes were worth 1.2 independent votes.</li>
+  <li><a href="https://github.com/nathanaelhub/open-finance-mcp">open-finance-mcp</a>, a server that
+  gives Claude free, citable SEC and Federal Reserve data, is where that question first came up.</li>
+</ul>
+
+<h2>How each project is handed off</h2>
+<p>Each repo has a README that says what was measured and what wasn't, tests that run on every
+change, and a runbook for the yearly updates: SNAP figures every October 1, new council meetings,
+changed policy pages. They're written so someone else can keep them running.</p>
+</main>
+<footer>Not affiliated with Anthropic. Every figure on this page is listed in
+<a href="https://github.com/nathanaelhub/public-interest-ai/blob/main/facts.json">facts.json</a>
+with the file it comes from, and a test checks the source still says it.</footer>
+</body>
+</html>

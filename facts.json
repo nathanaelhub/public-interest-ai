@@ -1,0 +1,164 @@
+[
+ {
+  "says": "155/158 with the screener vs 110/135 with web search",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "153/156 (98%) | 155/158 (98%) | 110/135 (81%)"
+ },
+ {
+  "says": "98% vs 81%",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "155/158 (98%) | 110/135 (81%)"
+ },
+ {
+  "says": "40 simulated households",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "40 synthetic households"
+ },
+ {
+  "says": "19/22 vs 3/22",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "19/22 | 19/22 | 3/22"
+ },
+ {
+  "says": "SNAP amounts estimated within $5",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "SNAP estimate within $5"
+ },
+ {
+  "says": "$0.19 vs $0.49",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "$0.12 | $0.19 | $0.49"
+ },
+ {
+  "says": "doesn't list Tennessee",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "Doesn't list Tennessee"
+ },
+ {
+  "says": "moved to 200% of poverty",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "a gross limit of 200% of poverty"
+ },
+ {
+  "says": "a test fails the day the USDA adds Tennessee",
+  "repo": "tn-benefits-screener",
+  "path": "README.md",
+  "contains": "A test fails the day USDA adds Tennessee to the chart."
+ },
+ {
+  "says": "1,125",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "1,125 distinct bills and resolutions"
+ },
+ {
+  "says": "21 meetings, January–October 2026",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "January 20 to October 20, 2026 (21 meetings"
+ },
+ {
+  "says": "6 real errors",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "**6 real errors**"
+ },
+ {
+  "says": "it flagged 14 of 1,124 summaries",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "read all 1,124 summaries that passed the checker ($7.57) and flagged 14"
+ },
+ {
+  "says": "0 vs 56 of 59",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "| Two names swapped | 62 | 0 | 56 (90%) | 56 (90%) |"
+ },
+ {
+  "says": "56 of 59",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "judge caught 56 of 59 real swap errors"
+ },
+ {
+  "says": "The official record has its own errors: four",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "turned\n  up four"
+ },
+ {
+  "says": "reads \"Fail\" for a resolution the council adopted",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "it read \"Fail\" for RS2026-2330, which the council adopted"
+ },
+ {
+  "says": "not by an independent person",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "not by an independent\nperson"
+ },
+ {
+  "says": "180 of 194",
+  "repo": "nashville-council-digest",
+  "path": "README.md",
+  "contains": "180 of 194 site-specific zoning bills"
+ },
+ {
+  "says": "Grade 2.6–5.8",
+  "repo": "nonprofit-ai-workshop",
+  "path": "README.md",
+  "contains": "They currently read at grade 2.6 to 5.8"
+ },
+ {
+  "says": "$0.10",
+  "repo": "nonprofit-ai-workshop",
+  "path": "README.md",
+  "contains": "Claude Sonnet, $0.10"
+ },
+ {
+  "says": "I expected Claude to invent numbers",
+  "repo": "nonprofit-ai-workshop",
+  "path": "README.md",
+  "contains": "I had predicted invented numbers"
+ },
+ {
+  "says": "Not yet run with real staff",
+  "repo": "nonprofit-ai-workshop",
+  "path": "README.md",
+  "contains": "not yet run with real staff."
+ },
+ {
+  "says": "three votes were worth 1.2 independent votes",
+  "repo": "judge-audit",
+  "path": "README.md",
+  "contains": "so three votes were worth **1.2**"
+ },
+ {
+  "says": "the item was wrong, not the judge",
+  "repo": "judge-audit",
+  "path": "README.md",
+  "contains": "Unanimous judge errors were dataset errors."
+ },
+ {
+  "says": "SNAP figures every October 1",
+  "repo": "nonprofit-ai-workshop",
+  "path": "RUNBOOK.md",
+  "contains": "## Every October 1: the SNAP figure"
+ },
+ {
+  "says": "wrong on all five votes",
+  "repo": "judge-audit",
+  "path": "README.md",
+  "contains": "two of them on all five votes"
+ }
+]
